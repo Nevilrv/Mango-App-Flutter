@@ -112,61 +112,28 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
                                 overflow: TextOverflow.fade,
                               ),
                             ),
-                            InkWell(
-                              onTap: () {
-                                if (currentUser.value.apiToken == null) {
-                                  _con.requestForCurrentLocation(context);
-                                } else {
-                                  var bottomSheetController = widget
-                                      .parentScaffoldKey.currentState
-                                      .showBottomSheet(
-                                    (context) =>
-                                        DeliveryAddressBottomSheetWidget(
-                                            scaffoldKey:
-                                                widget.parentScaffoldKey),
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: new BorderRadius.only(
-                                          topLeft: Radius.circular(10),
-                                          topRight: Radius.circular(10)),
-                                    ),
-                                  );
-                                  bottomSheetController.closed.then((value) {
-                                    _con.refreshHome();
-                                  });
-                                }
-                              },
-                              child: Container(
-                                padding: const EdgeInsets.symmetric(
-                                    vertical: 6, horizontal: 10),
-                                decoration: BoxDecoration(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(5)),
-                                  color: settingsRepo
-                                              .deliveryAddress.value?.address ==
-                                          null
-                                      ? Theme.of(context)
-                                          .focusColor
-                                          .withOpacity(0.1)
-                                      : Theme.of(context).accentColor,
-                                ),
-                                child: Text(
-                                  S.of(context).delivery,
-                                  style: TextStyle(
-                                      color: settingsRepo.deliveryAddress.value
-                                                  ?.address ==
-                                              null
-                                          ? Theme.of(context).hintColor
-                                          : Theme.of(context).primaryColor),
-                                ),
-                              ),
-                            ),
-                            // SizedBox(width: 7),
                             // InkWell(
                             //   onTap: () {
-                            //     setState(() {
-                            //       settingsRepo.deliveryAddress.value?.address =
-                            //           null;
-                            //     });
+                            //     if (currentUser.value.apiToken == null) {
+                            //       _con.requestForCurrentLocation(context);
+                            //     } else {
+                            //       var bottomSheetController = widget
+                            //           .parentScaffoldKey.currentState
+                            //           .showBottomSheet(
+                            //         (context) =>
+                            //             DeliveryAddressBottomSheetWidget(
+                            //                 scaffoldKey:
+                            //                     widget.parentScaffoldKey),
+                            //         shape: RoundedRectangleBorder(
+                            //           borderRadius: new BorderRadius.only(
+                            //               topLeft: Radius.circular(10),
+                            //               topRight: Radius.circular(10)),
+                            //         ),
+                            //       );
+                            //       bottomSheetController.closed.then((value) {
+                            //         _con.refreshHome();
+                            //       });
+                            //     }
                             //   },
                             //   child: Container(
                             //     padding: const EdgeInsets.symmetric(
@@ -175,7 +142,7 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
                             //       borderRadius:
                             //           BorderRadius.all(Radius.circular(5)),
                             //       color: settingsRepo
-                            //                   .deliveryAddress.value?.address !=
+                            //                   .deliveryAddress.value?.address ==
                             //               null
                             //           ? Theme.of(context)
                             //               .focusColor
@@ -183,16 +150,49 @@ class _HomeWidgetState extends StateMVC<HomeWidget> {
                             //           : Theme.of(context).accentColor,
                             //     ),
                             //     child: Text(
-                            //       S.of(context).pickup,
+                            //       S.of(context).delivery,
                             //       style: TextStyle(
                             //           color: settingsRepo.deliveryAddress.value
-                            //                       ?.address !=
+                            //                       ?.address ==
                             //                   null
                             //               ? Theme.of(context).hintColor
                             //               : Theme.of(context).primaryColor),
                             //     ),
                             //   ),
                             // ),
+                            // SizedBox(width: 7),
+                            InkWell(
+                              onTap: () {
+                                setState(() {
+                                  settingsRepo.deliveryAddress.value?.address =
+                                      null;
+                                });
+                              },
+                              child: Container(
+                                padding: const EdgeInsets.symmetric(
+                                    vertical: 6, horizontal: 10),
+                                decoration: BoxDecoration(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(5)),
+                                  color: settingsRepo
+                                              .deliveryAddress.value?.address !=
+                                          null
+                                      ? Theme.of(context)
+                                          .focusColor
+                                          .withOpacity(0.1)
+                                      : Theme.of(context).accentColor,
+                                ),
+                                child: Text(
+                                  S.of(context).pickup,
+                                  style: TextStyle(
+                                      color: settingsRepo.deliveryAddress.value
+                                                  ?.address !=
+                                              null
+                                          ? Theme.of(context).hintColor
+                                          : Theme.of(context).primaryColor),
+                                ),
+                              ),
+                            ),
                           ],
                         ),
                         if (settingsRepo.deliveryAddress.value?.address != null)
