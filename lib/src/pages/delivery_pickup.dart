@@ -86,11 +86,11 @@ class _DeliveryPickupWidgetState extends StateMVC<DeliveryPickupWidget> {
                 ),
               ),
             ),
-            PickUpMethodItem(
-                paymentMethod: _con.getPickUpMethod(),
-                onPressed: (paymentMethod) {
-                  _con.togglePickUp();
-                }),
+            // PickUpMethodItem(
+            //     paymentMethod: _con.getPickUpMethod(),
+            //     onPressed: (paymentMethod) {
+            //       _con.togglePickUp();
+            //     }),
             Column(
               children: <Widget>[
                 Padding(
