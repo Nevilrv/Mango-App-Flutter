@@ -64,28 +64,28 @@ class _DeliveryPickupWidgetState extends StateMVC<DeliveryPickupWidget> {
           mainAxisAlignment: MainAxisAlignment.start,
           mainAxisSize: MainAxisSize.max,
           children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.only(left: 20, right: 10),
-              child: ListTile(
-                contentPadding: EdgeInsets.symmetric(vertical: 0),
-                leading: Icon(
-                  Icons.domain,
-                  color: Theme.of(context).hintColor,
-                ),
-                title: Text(
-                  S.of(context).pickup,
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                  style: Theme.of(context).textTheme.headline4,
-                ),
-                subtitle: Text(
-                  S.of(context).pickup_your_product_from_the_market,
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                  style: Theme.of(context).textTheme.caption,
-                ),
-              ),
-            ),
+            // Padding(
+            //   padding: const EdgeInsets.only(left: 20, right: 10),
+            //   child: ListTile(
+            //     contentPadding: EdgeInsets.symmetric(vertical: 0),
+            //     leading: Icon(
+            //       Icons.domain,
+            //       color: Theme.of(context).hintColor,
+            //     ),
+            //     title: Text(
+            //       S.of(context).pickup,
+            //       maxLines: 1,
+            //       overflow: TextOverflow.ellipsis,
+            //       style: Theme.of(context).textTheme.headline4,
+            //     ),
+            //     subtitle: Text(
+            //       S.of(context).pickup_your_product_from_the_market,
+            //       maxLines: 1,
+            //       overflow: TextOverflow.ellipsis,
+            //       style: Theme.of(context).textTheme.caption,
+            //     ),
+            //   ),
+            // ),
             // PickUpMethodItem(
             //     paymentMethod: _con.getPickUpMethod(),
             //     onPressed: (paymentMethod) {
