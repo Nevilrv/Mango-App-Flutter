@@ -113,45 +113,45 @@ class _MarketWidgetState extends StateMVC<MarketWidget> {
                               child: Row(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: <Widget>[
-                                  Expanded(
-                                    child: Text(
-                                      _con.market?.name ?? '',
-                                      overflow: TextOverflow.fade,
-                                      softWrap: false,
-                                      maxLines: 2,
-                                      style:
-                                          Theme.of(context).textTheme.headline3,
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 32,
-                                    child: Chip(
-                                      padding: EdgeInsets.all(0),
-                                      label: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: <Widget>[
-                                          Text(_con.market.rate,
-                                              style: Theme.of(context)
-                                                  .textTheme
-                                                  .bodyText1
-                                                  .merge(TextStyle(
-                                                      color: Theme.of(context)
-                                                          .primaryColor))),
-                                          Icon(
-                                            Icons.star_border,
-                                            color:
-                                                Theme.of(context).primaryColor,
-                                            size: 16,
-                                          ),
-                                        ],
-                                      ),
-                                      backgroundColor: Theme.of(context)
-                                          .accentColor
-                                          .withOpacity(0.9),
-                                      shape: StadiumBorder(),
-                                    ),
-                                  ),
+                                  // Expanded(
+                                  //   child: Text(
+                                  //     "${_con.market?.name ?? ''}",
+                                  //     overflow: TextOverflow.fade,
+                                  //     softWrap: false,
+                                  //     maxLines: 2,
+                                  //     style:
+                                  //         Theme.of(context).textTheme.headline3,
+                                  //   ),
+                                  // ),
+                                  // SizedBox(
+                                  //   height: 32,
+                                  //   child: Chip(
+                                  //     padding: EdgeInsets.all(0),
+                                  //     label: Row(
+                                  //       mainAxisAlignment:
+                                  //           MainAxisAlignment.center,
+                                  //       children: <Widget>[
+                                  //         Text(_con.market.rate,
+                                  //             style: Theme.of(context)
+                                  //                 .textTheme
+                                  //                 .bodyText1
+                                  //                 .merge(TextStyle(
+                                  //                     color: Theme.of(context)
+                                  //                         .primaryColor))),
+                                  //         Icon(
+                                  //           Icons.star_border,
+                                  //           color:
+                                  //               Theme.of(context).primaryColor,
+                                  //           size: 16,
+                                  //         ),
+                                  //       ],
+                                  //     ),
+                                  //     backgroundColor: Theme.of(context)
+                                  //         .accentColor
+                                  //         .withOpacity(0.9),
+                                  //     shape: StadiumBorder(),
+                                  //   ),
+                                  // ),
                                 ],
                               ),
                             ),
